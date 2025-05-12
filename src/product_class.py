@@ -1,12 +1,13 @@
 class Product:
-    """ Наименование, описание, цена и количество продукта """
+    """Наименование, описание, цена и количество продукта"""
+
     name: str
     description: str
     __price: float
     quantity: int
 
     def __init__(self, name, description, price, quantity):
-        """ Создание нового продукта """
+        """Создание нового продукта"""
         self.name = name
         self.description = description
         self.__price = price
@@ -17,11 +18,9 @@ class Product:
         prod = Product(**product)
         return prod
 
-
     @property
     def price(self):
         return self.__price
-
 
     @price.setter
     def price(self, price):

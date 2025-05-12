@@ -2,7 +2,8 @@ from src.product_class import Product
 
 
 class Category:
-    """ Наименование, описание и список входящих продуктов """
+    """Наименование, описание и список входящих продуктов"""
+
     name: str
     description: str
     __products: list
@@ -11,9 +12,8 @@ class Category:
 
     product_count = 0
 
-
     def __init__(self, name, description, products):
-        """ Создание новой категории """
+        """Создание новой категории"""
         self.name = name
         self.description = description
         self.__products = products
@@ -22,11 +22,9 @@ class Category:
 
         Category.product_count += len(self.__products)
 
-
     def add_product(self, new_product: Product):
         self.__products.append(new_product)
         Category.product_count += 1
-
 
     @property
     def products(self):
@@ -35,7 +33,6 @@ class Category:
         for el in prod_lst:
             result += f"{el.name}, {el.price} руб. Остаток: {el.quantity} шт.\n"
         return result
-
 
     @property
     def products_lst(self):

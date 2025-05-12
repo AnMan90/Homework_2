@@ -16,3 +16,9 @@ def test_category_count(category_phone):
 
 def test_product_count(category_phone):
     assert Category.product_count == 3
+
+
+def test_products(product_samsung):
+    cat = Category("Смартфоны", "", [])
+    cat.add_product(product_samsung)
+    assert cat.products == "Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт.\n"
