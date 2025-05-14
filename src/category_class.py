@@ -38,3 +38,9 @@ class Category:
     def products_lst(self):
         prod_lst = self.__products
         return prod_lst
+
+    def __str__(self):
+        total = 0
+        for product in self.__products:
+            total += product.quantity
+        return f"{self.name}, количество продуктов: {total} шт."
