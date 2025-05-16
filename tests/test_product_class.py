@@ -1,3 +1,5 @@
+import pytest
+
 from src.product_class import Product
 
 
@@ -36,3 +38,8 @@ def test_mag_str(product_xiaomi):
 
 def test_mag_add(product_xiaomi, product_samsung):
     assert product_xiaomi + product_samsung == 1334000
+
+
+def test_mag_add_error(product_xiaomi):
+    with pytest.raises(TypeError):
+        res = product_xiaomi + 1

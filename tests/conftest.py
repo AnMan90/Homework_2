@@ -2,6 +2,7 @@ import pytest
 
 from src.category_class import Category
 from src.product_class import Product
+from src.product_subclass import Smartphone, LawnGrass
 
 
 @pytest.fixture()
@@ -28,3 +29,13 @@ def category_phone(product_samsung, product_iphone, product_xiaomi):
         "Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни",
         [product_samsung, product_iphone, product_xiaomi],
     )
+
+
+@pytest.fixture
+def subclass_phone():
+    return Smartphone("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14, 90.3, "Note 11", 1024, "Синий")
+
+
+@pytest.fixture
+def subclass_grass():
+    return LawnGrass("Газонная трава", "Элитная трава для газона", 500.0, 20, "Россия", "7 дней", "Зеленый")

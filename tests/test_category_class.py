@@ -1,3 +1,5 @@
+import pytest
+
 from src.category_class import Category
 
 
@@ -26,3 +28,10 @@ def test_products(product_samsung):
 
 def test_mag_str(category_phone):
     assert str(category_phone) == "Смартфоны, количество продуктов: 27 шт."
+
+
+def test_add_product_raises():
+    cat = Category("Смартфоны", "", [])
+    with pytest.raises(TypeError):
+        cat.add_product("product_samsung")
+
