@@ -1,3 +1,5 @@
+import pytest
+
 from src.product_class import Product
 
 
@@ -28,3 +30,16 @@ def test_new_product():
     assert product.description == "256GB, Серый цвет, 200MP камера"
     assert product.price == 180000.0
     assert product.quantity == 5
+
+
+def test_mag_str(product_xiaomi):
+    assert str(product_xiaomi) == "Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт."
+
+
+def test_mag_add(product_xiaomi, product_samsung):
+    assert product_xiaomi + product_samsung == 1334000
+
+
+def test_mag_add_error(product_xiaomi):
+    with pytest.raises(TypeError):
+        res = product_xiaomi + 1
