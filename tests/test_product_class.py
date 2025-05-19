@@ -42,4 +42,4 @@ def test_mag_add(product_xiaomi, product_samsung):
 
 def test_mag_add_error(product_xiaomi):
     with pytest.raises(TypeError):
-        res = product_xiaomi + 1
+        product_xiaomi + 1

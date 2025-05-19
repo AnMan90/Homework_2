@@ -34,4 +34,3 @@ def test_add_product_raises():
     cat = Category("Смартфоны", "", [])
     with pytest.raises(TypeError):
         cat.add_product("product_samsung")
-
