@@ -34,3 +34,11 @@ def test_add_product_raises():
     cat = Category("Смартфоны", "", [])
     with pytest.raises(TypeError):
         cat.add_product("product_samsung")
+
+
+def test_middle_price(category_phone):
+    assert category_phone.middle_price() == 140333.33
+
+
+def test_middle_price_error(category_phone_err):
+    assert category_phone_err.middle_price() == 0

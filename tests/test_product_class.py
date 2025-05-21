@@ -10,6 +10,11 @@ def test_product_init(product_xiaomi):
     assert product_xiaomi.quantity == 14
 
 
+def test_product_error():
+    with pytest.raises(ValueError, match="Товар с нулевым количеством не может быть добавлен"):
+        Product("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 0)
+
+
 def test_price_setter(product_samsung, capsys):
     product_samsung.price = -1000
     assert capsys.readouterr().out == "Цена не должна быть нулевая или отрицательная\n"
