@@ -31,6 +31,17 @@ def category_phone(product_samsung, product_iphone, product_xiaomi):
     )
 
 
+@pytest.fixture()
+def category_phone_err(product_samsung, product_iphone, product_xiaomi):
+    Category.category_count = 0
+    Category.product_count = 0
+    return Category(
+        "Смартфоны",
+        "Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни",
+        [],
+    )
+
+
 @pytest.fixture
 def subclass_phone():
     return Smartphone("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14, 90.3, "Note 11", 1024, "Синий")
